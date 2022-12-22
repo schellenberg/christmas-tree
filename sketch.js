@@ -72,8 +72,14 @@ class danOrnament extends Ornament {
   }
   
   update() {
-    this.width++;
-    this.height++;
+    if (random(100) < 50) {
+      this.width++;
+      this.height++;
+    }
+    else {
+      this.width--;
+      this.height--;
+    }
   }
 }
 
