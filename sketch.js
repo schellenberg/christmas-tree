@@ -89,30 +89,31 @@ class danOrnament extends Ornament {
 //add your class here... should look something like:
 //class willOrnament extends Ornament {
 
-  class taranOrnament extends Ornament {
-    constructor(x, y) {
-      super(x, y, "red", 30, 30);
-    }
-    
-    update() {
-      // if (random(100) < 50) {
-      //   this.width++;
-      //   this.height++;
-      // }
-      // else {
-      //   this.width--;
-      //   this.height--;
-      // }
-      this.someColor = color(sin(millis()/1000) * 255, cos(millis()/1000) * 255, tan(millis()/1000) * 255)
-    }
-    display() {
-      fill(this.someColor);
-      ellipseMode(CENTER);
-      ellipse(this.x, this.y, this.width* sin(millis()/1000) + 10, this.height* sin(millis()/1000)) + 10;
-      textSize(10);
-      stroke(0);
-      
-      text("T",this.width, this.height);
-
-    }
+class taranOrnament extends Ornament {
+  constructor(x, y) {
+    super(x, y, "red", 30, 30);
   }
+  
+  update() {
+    // if (random(100) < 50) {
+    //   this.width++;
+    //   this.height++;
+    // }
+    // else {
+    //   this.width--;
+    //   this.height--;
+    // }
+    this.someColor = color(sin(millis()/1000) * 255, cos(millis()/1000) * 255, tan(millis()/1000) * 255)
+  }
+  display() {
+    fill(this.someColor);
+    ellipseMode(CENTER);
+    textAlign(CENTER, CENTER);
+    ellipse(this.x, this.y, this.width* sin(millis()/1000) + 10, this.height* sin(millis()/1000)) + 10;
+    textSize(abs(15* sin(millis()/1000)));
+    fill(0);
+
+    text("T",this.x, this.y);
+
+  }
+}
