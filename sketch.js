@@ -1,5 +1,12 @@
 let theTree;
 let theOrnaments = [];
+let willStarImage;
+let willStarLength = 150;
+let willNumber = 50;
+
+function preload(){
+  willStarImage = loadImage("imagetreestar.png");
+}
 
 function setup() {
   createCanvas(1280, 900);
@@ -10,8 +17,9 @@ function setup() {
   theOrnaments.push(schellenbergOrnament);
 
   //add yours here!  should something like:
-  // let hladyOrnament = new willOrnament(width/2, height/2);
-  // theOrnaments.push(hladyOrnament);
+  
+  let hladyOrnament = new willOrnament(width/2 - willStarLength/2, -10);
+  theOrnaments.push(hladyOrnament);
 }
 
 function draw() {
@@ -66,6 +74,7 @@ class Ornament {
   }
 }
 
+
 class danOrnament extends Ornament {
   constructor(x, y) {
     super(x, y, "blue", 30, 30);
@@ -83,5 +92,11 @@ class danOrnament extends Ornament {
   }
 }
 
-//add your class here... should look something like:
-//class willOrnament extends Ornament {
+class willOrnament extends Ornament{
+  constructor(x, y){
+    super(x, y, "green", willStarLength, willStarLength);
+  }
+  display(){
+    image(willStarImage, this.x, this.y, this.width, this.height);
+  }
+}
