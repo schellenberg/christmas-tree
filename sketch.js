@@ -10,8 +10,8 @@ function setup() {
   theOrnaments.push(schellenbergOrnament);
 
   //add yours here!  should something like:
-  // let hladyOrnament = new willOrnament(width/2, height/2);
-  // theOrnaments.push(hladyOrnament);
+  let kesurOrnament = new katiOrnament(width/2.3, height/2.1);
+  theOrnaments.push(kesurOrnament);
 }
 
 function draw() {
@@ -84,4 +84,8 @@ class danOrnament extends Ornament {
 }
 
 //add your class here... should look something like:
-//class willOrnament extends Ornament {
+class katiOrnament extends Ornament {
+  constructor(x,y) {
+    super(x, y, "#890808", 30, 30);
+  }
+}
